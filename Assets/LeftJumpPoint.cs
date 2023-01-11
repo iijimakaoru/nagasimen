@@ -44,8 +44,8 @@ public class LeftJumpPoint : MonoBehaviour
 
         if (isJump)
         {
-            rigidbody.AddForce(new Vector3(0, 1, 0) * (power * 4));
-            rigidbody.AddForce(new Vector3(1, 0, 0) * (power * 3));
+            rigidbody.AddForce(new Vector3(0, 1, 0) * (power * 5));
+            rigidbody.AddForce(new Vector3(1, 0, 0) * (power * 2));
         }
     }
 
