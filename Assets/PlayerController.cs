@@ -5,7 +5,6 @@ using EZCameraShake;
 
 public class PlayerController : MonoBehaviour
 {
-
     private float test = 1;
     private float power = 3;
     private float loundPower = 0.5f;
