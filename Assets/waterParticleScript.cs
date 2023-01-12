@@ -20,13 +20,5 @@ public class waterParticleScript : MonoBehaviour
     void Update()
     {
         transform.position = player.transform.position + offset;
-        if (waterSqripte.isInWater)
-        {
-            Instantiate(waterParticle,
-                    new Vector3(transform.position.x,
-                    transform.position.y,
-                    transform.position.z),
-                    Quaternion.identity);
-        }
     }
 }
