@@ -22,7 +22,7 @@ public class RightJumpPoint : MonoBehaviour
 
     public GameObject landingParticle;
 
-    bool isParticles = false;
+    public bool isParticles = false;
 
     private void OnTriggerStay(Collider other)
     {
@@ -33,11 +33,6 @@ public class RightJumpPoint : MonoBehaviour
             isJump = true;
             if (!isParticles)
             {
-                Instantiate(landingParticle,
-                    new Vector3(landingParticle.transform.position.x,
-                    landingParticle.transform.position.y,
-                    landingParticle.transform.position.z),
-                    Quaternion.identity);
                 isParticles = true;
             }
         }

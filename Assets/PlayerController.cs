@@ -13,7 +13,9 @@ public class PlayerController : MonoBehaviour
 
     public GameObject landingParticle;
 
-    bool isParticles = false;
+    bool isLanding = false;
+
+    public bool isParticles = false;
 
     bool isGround;
 
@@ -39,15 +41,13 @@ public class PlayerController : MonoBehaviour
 
         if (isGround)
         {
-            if (!isParticles)
+            if (!isLanding)
             {
-                Instantiate(landingParticle,
-                    new Vector3(landingParticle.transform.position.x,
-                    landingParticle.transform.position.y,
-                    landingParticle.transform.position.z),
-                    Quaternion.identity);
-                //CameraShaker.Instance.ShakeOnce(4f, 4f, 1f, 1f);
-                isParticles = true;
+                if (!isParticles)
+                {
+                    isParticles = true;
+                }
+                isLanding = true;
             }
 
             fallTimer = 60;
@@ -115,7 +115,7 @@ public class PlayerController : MonoBehaviour
             {
                 rigidbody.AddForce(new Vector3(0, -1, 0) * power / 2);
             }
-            isParticles = false;
+            isLanding = false;
         }
 
         //Debug.Log(isGround);
