@@ -81,35 +81,22 @@ public class PlayerController : MonoBehaviour
             if (speedLevel == 1)
             {
                 loundPower = 0.5f;
-                Debug.Log("level1");
             }
             else if (speedLevel == 2)
             {
                 loundPower = 1.5f;
-                Debug.Log("level2");
             }
             else if (speedLevel == 3)
             {
                 loundPower = 2.5f;
-                Debug.Log("level3");
             }
             else
             {
                 loundPower = 0;
-                Debug.Log("levelhoge");
             }
         }
         else
         {
-            //if (Input.GetKey(KeyCode.Space))
-            //{
-            //    rigidbody2.angularVelocity = new Vector3(0, 0, 1) * power * 3;
-            //}
-            //else
-            //{
-            //    rigidbody2.angularVelocity = new Vector3(0, 0, 0);
-            //}
-
             fallTimer--;
             if (fallTimer < 0)
             {
@@ -117,7 +104,5 @@ public class PlayerController : MonoBehaviour
             }
             isLanding = false;
         }
-
-        //Debug.Log(isGround);
     }
 }
