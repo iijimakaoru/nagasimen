@@ -18,7 +18,7 @@ public class PlayerController : MonoBehaviour
 
     public bool isParticles = false;
 
-    bool isGround;
+    public bool isGround;
 
     int speedLevel = 1;
 

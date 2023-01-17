@@ -27,26 +27,31 @@ public class RightJumpPoint : MonoBehaviour
     private void OnTriggerStay(Collider other)
     {
         power = 25;
-
-        if (Input.GetKey(KeyCode.Space))
+        if (other.CompareTag("Player"))
         {
-            isJump = true;
-            if (!isParticles)
+            if (Input.GetKey(KeyCode.Space))
             {
-                isParticles = true;
+                isJump = true;
+                if (!isParticles)
+                {
+                    isParticles = true;
+                }
             }
-        }
 
-        if (isJump)
-        {
-            rigidbody.AddForce(new Vector3(0, 1, 0) * (power * 5));
-            rigidbody.AddForce(new Vector3(-1, 0, 0) * (power * 2));
+            if (isJump)
+            {
+                rigidbody.AddForce(new Vector3(0, 1, 0) * (power * 5));
+                rigidbody.AddForce(new Vector3(-1, 0, 0) * (power * 2));
+            }
         }
     }
 
     private void OnTriggerExit(Collider other)
     {
-        isJump = false;
-        isParticles = false;
+        if (other.CompareTag("Player"))
+        {
+            isJump = false;
+            isParticles = false;
+        }
     }
 }
